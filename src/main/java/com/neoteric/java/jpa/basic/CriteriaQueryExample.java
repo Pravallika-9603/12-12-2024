@@ -1,5 +1,6 @@
-package com.neoteric.java.jpa;
+package com.neoteric.java.jpa.basic;
 
+import com.neoteric.java.jpa.onetomany.EmployeeEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

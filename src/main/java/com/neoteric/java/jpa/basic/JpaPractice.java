@@ -1,13 +1,14 @@
+/*
 package com.neoteric.java.jpa;
+
+import com.neoteric.java.jpa.onetomany.EmployeeEntity;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 public class JpaPractice {
@@ -89,3 +90,4 @@ public class JpaPractice {
     }
 }
 
+*/

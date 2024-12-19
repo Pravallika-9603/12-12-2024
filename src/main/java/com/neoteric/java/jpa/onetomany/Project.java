@@ -1,4 +1,4 @@
-package com.neoteric.java.jpa;
+package com.neoteric.java.jpa.onetomany;
 
 import java.util.Date;
 import java.util.List;

@@ -1,14 +1,15 @@
-package com.neoteric.java.jpa;
+package com.neoteric.java.jpa.onetomany;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 @Table(name = "emp")
 public class EmployeeEntity {
 
-    public EmployeeEntity(){
+    public EmployeeEntity() {
 
     }
+
     @Id
     @Column(name = "empid")
     private int empid;
@@ -16,7 +17,7 @@ public class EmployeeEntity {
     @Column(name = "managerid")
     private int managerid;
 
-    @Column(name = "projectId",insertable = false,updatable = false)
+    @Column(name = "projectId", insertable = false, updatable = false)
     private int project;
 
     @Column(name = "salary")
@@ -31,10 +32,9 @@ public class EmployeeEntity {
     @Column(name = "state")
     private String state;
 
-    @JoinColumn(name = "projectId",referencedColumnName = "proId")
+    @JoinColumn(name = "projectId", referencedColumnName = "proId")
     @ManyToOne()
-    private ProjectEntity projectEntity;
-
+    //private ProjectEntity projectEntity;
 
 
     public int getEmpid() {
@@ -83,15 +83,7 @@ public class EmployeeEntity {
     }
 
     public void setProjectId(int projectId) {
-        this.project= projectId;
+        this.project = projectId;
     }
 
-    public ProjectEntity getProjectEntity() {
-        return projectEntity;
-    }
-
-    public void setProjectEntity(ProjectEntity projectEntity) {
-        this.projectEntity = projectEntity;
-    }
 }
-
