@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Entity
+//@Entity
 @Table
 public class StockOption extends Stock {
     @Column(name = "strikePrice")

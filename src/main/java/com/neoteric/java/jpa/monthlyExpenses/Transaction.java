@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table
 public class Transaction {
 
     @Id
@@ -19,6 +20,10 @@ public class Transaction {
 
     @Column(nullable = false)
     private String transType;
+
+    @Column(nullable = false)
+    private boolean isSmartEmi;
+
 
     @ManyToOne
     @JoinColumn(name = "credit_card_no", nullable = false)
@@ -65,5 +70,13 @@ public class Transaction {
 
     public void setCreditCard(CreditCard creditCard) {
         this.creditCard = creditCard;
+    }
+
+    public boolean isSmartEmi() {
+        return isSmartEmi;
+    }
+
+    public void setSmartEmi(boolean smartEmi) {
+        isSmartEmi = smartEmi;
     }
 }

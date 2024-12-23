@@ -5,13 +5,11 @@
              version="3.0">
 
     <persistence-unit name="hibernateDemo">
-        <class>com.neoteric.java.jpa.stock.FutureStock</class>
-        <class>com.neoteric.java.jpa.stock.RestrictedStock</class>
-        <class>com.neoteric.java.jpa.stock.StockOption</class>
-        <class>com.neoteric.java.jpa.stock.Stock</class>
+        <class>com.neoteric.java.jpa.monthlyExpenses.Transaction</class>
+        <class>com.neoteric.java.jpa.monthlyExpenses.CreditCard</class>
 
         <properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/stock"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smartEmi"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="root"/>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

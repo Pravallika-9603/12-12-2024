@@ -2,7 +2,7 @@ package com.neoteric.java.jpa.stock;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Stock {
     @Id

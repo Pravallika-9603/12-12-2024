@@ -5,33 +5,41 @@ import java.util.List;
 
 public class EmiService {
     BillPeriod billPeriod;
-    public EmiService(BillPeriod billPeriod){
-        this.billPeriod=billPeriod;
+
+    public EmiService(BillPeriod billPeriod) {
+        this.billPeriod = billPeriod;
     }
 
-    public void emiSchedule(Transaction tran,int noofMon,Double intrest){
+//    public void emiSchedule(Transaction tran, int noofMon) {
+//
+//        List<SmartEmi> smartEmiList = new ArrayList<>();
+//
+//        Double amountPerMon = (tran.getTransAmount() + tran.getTransAmount() * 0.1) / noofMon;
+//
+//        for (int i = 0; i < noofMon; i++) {
+//
+//            SmartEmi smartEmi = new SmartEmi();
+//            smartEmi.setAmountperMon(amountPerMon);
+//            smartEmi.setAmountLeft(smartEmi.getAmout() - smartEmi.getAmountperMon());
+//            smartEmiList.add(smartEmi);
+//
+//        }
+//
+//    }
 
-        List<SmartEmi> smartEmiList=new ArrayList<>();
+    public Double emiService(Transaction tran, int noofMon) {
+        Double amountPerMon;
+        if (tran.getTransDate().before(billPeriod.getFromDate()) || tran.getTransDate().after(billPeriod.getFromDate()) || tran.getTransDate().before(billPeriod.getToDate())) {
 
-        Double amountPerMon=tran.getTransAmount()*intrest/noofMon;
+             amountPerMon = (tran.getTransAmount() + tran.getTransAmount() * 0.1) / noofMon;
 
-        for(int i=0;i<noofMon;i++){
-
-            SmartEmi smartEmi=new SmartEmi();
-            smartEmi.setAmountperMon(amountPerMon);
-            smartEmi.setAmountLeft(smartEmi.getAmout()-smartEmi.getAmountperMon());
-            smartEmiList.add(smartEmi);
+        }
+        else{
+             amountPerMon = (tran.getTransAmount() + tran.getTransAmount() * 0.2) / noofMon;
 
         }
 
+        return amountPerMon;
     }
-
-    public void emiService(Transaction transaction,int noofMon){
-
-        if(transaction.getTransDate().before(billPeriod.getFromDate())||transaction.getTransDate().after(billPeriod.getFromDate())||transaction.getTransDate().before(billPeriod.getToDate())){
-
-        }
-
-    }
-
 }
+

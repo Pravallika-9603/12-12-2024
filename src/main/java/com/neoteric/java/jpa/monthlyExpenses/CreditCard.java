@@ -1,24 +1,23 @@
 package com.neoteric.java.jpa.monthlyExpenses;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "creditcard")
 public class CreditCard {
     @Id
-    @Column
-    private String cardNo;
+    @Column(name = "cardno", nullable = false)
+    private String cardNo; // Assuming card numbers are assigned externally
 
-    @Column
-    private Double limit;
+    @Column(nullable = false)
+    private Double cardlimit;
 
-    @OneToMany(mappedBy = "creditCard")
+
+    @OneToMany(mappedBy = "creditCard", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactionList;
 
+    // Getters and Setters
     public String getCardNo() {
         return cardNo;
     }
@@ -27,11 +26,19 @@ public class CreditCard {
         this.cardNo = cardNo;
     }
 
-    public Double getLimit() {
-        return limit;
+    public Double getCardlimit() {
+        return cardlimit;
     }
 
-    public void setLimit(Double limit) {
-        this.limit = limit;
+    public void setCardlimit(Double cardlimit) {
+        this.cardlimit = cardlimit;
+    }
+
+    public List<Transaction> getTransactionList() {
+        return transactionList;
+    }
+
+    public void setTransactionList(List<Transaction> transactionList) {
+        this.transactionList = transactionList;
     }
 }

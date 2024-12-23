@@ -2,7 +2,7 @@ package com.neoteric.java.jpa.monthlyExpenses;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class SmartEmi {
     @Column
     private Double amout;

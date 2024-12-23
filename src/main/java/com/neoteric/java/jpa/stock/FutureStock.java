@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 import java.util.Date;
 
-@Entity
+//@Entity
 @Table
 public class FutureStock extends Stock {
     @Column(name = "expirationDate")
