@@ -10,22 +10,22 @@ public class EmiService {
         this.billPeriod = billPeriod;
     }
 
-//    public void emiSchedule(Transaction tran, int noofMon) {
-//
-//        List<SmartEmi> smartEmiList = new ArrayList<>();
-//
-//        Double amountPerMon = (tran.getTransAmount() + tran.getTransAmount() * 0.1) / noofMon;
-//
-//        for (int i = 0; i < noofMon; i++) {
-//
-//            SmartEmi smartEmi = new SmartEmi();
-//            smartEmi.setAmountperMon(amountPerMon);
-//            smartEmi.setAmountLeft(smartEmi.getAmout() - smartEmi.getAmountperMon());
-//            smartEmiList.add(smartEmi);
-//
-//        }
-//
-//    }
+    public void emiSchedule(Transaction tran, int noofMon) {
+
+        List<SmartEmi> smartEmiList = new ArrayList<>();
+
+        Double amountPerMon = (tran.getTransAmount() + tran.getTransAmount() * 0.1) / noofMon;
+
+        for (int i = 0; i < noofMon; i++) {
+
+            SmartEmi smartEmi = new SmartEmi();
+            smartEmi.setAmountperMon(amountPerMon);
+            smartEmi.setAmountLeft(smartEmi.getAmout() - smartEmi.getAmountperMon());
+            smartEmiList.add(smartEmi);
+
+        }
+
+    }
 
     public Double emiService(Transaction tran, int noofMon) {
         Double amountPerMon;

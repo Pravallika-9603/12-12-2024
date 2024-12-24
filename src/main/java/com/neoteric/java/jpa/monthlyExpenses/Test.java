@@ -35,6 +35,7 @@ public class Test {
             transaction1.setTransType("debit");
             transaction1.setTransAmount(100.0);
             transaction1.setSmartEmi(false);
+
             Date currentDate = new Date();
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(currentDate);
